@@ -4,6 +4,9 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminPanel from "./components/AdminPanel";
 import PrivateRoute from "./components/PrivateRoute";
 import Navbar from "./components/Navbar";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Work from "./pages/Work";
 
 const App = () => {
   return (
@@ -20,6 +23,9 @@ const App = () => {
             </PrivateRoute>
           }
         />
+        <Route path="/work" element={<Work />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
