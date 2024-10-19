@@ -1,18 +1,26 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import AdminLogin from "./pages/AdminLogin";
 import AdminPanel from "./components/AdminPanel";
+import PrivateRoute from "./components/PrivateRoute";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/panel" element={<AdminPanel />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route
+          path="/admin/panel"
+          element={
+            <PrivateRoute>
+              <AdminPanel />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
