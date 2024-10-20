@@ -27,6 +27,7 @@ const Work = () => {
                   className="h-48 w-full object-cover"
                 />
               }
+              className="hover:scale-105 transition-transform duration-300 hover:cursor-pointer hover:z-10 hover:"
             >
               <div className="flex justify-between items-center">
                 <Card.Meta title={project.title} />
